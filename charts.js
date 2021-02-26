@@ -106,17 +106,15 @@ function buildCharts(sample) {
     Plotly.newPlot("plotAreaBubble", [bubbleData], bubbleLayout);
 
     //Gauge
-    var total_samples = data.samples;
-    var filters = total_samples.filter((sampleObj) => sampleObj.id == sample);
+    var metadata = data.metadata;
+    var filters = metadata.filter((sampleObj) => sampleObj.id == sample);
     var results = filters[0];
-    var otu_ids = results.otu_ids;
-    var otu_labels = results.otu_labels;
-    var sample_values = results.sample_values;
-    var wash_frequency = results.washingFrequency;
-    var yticks = otu_ids.slice(0, 10).map((otuID) => `OTU ${otuID}`);
+    var washFrequency = results.wfreq;
+    console.log(washFrequency);
     // 4. Create the trace for the gauge chart.
     var gaugeData = {
-      value: washingFrequency,
+      title: { text: "Bellybutton Washing Frequency" },
+      value: parsefloat(washFrequency),
       type: "indicator",
       mode: "gauge+number",
       gauge: {
@@ -134,7 +132,6 @@ function buildCharts(sample) {
 
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = {
-      title: { text: "Bellybutton Washing Frequency" },
       hovermode: "closest",
     };
 
