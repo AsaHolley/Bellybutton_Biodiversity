@@ -114,7 +114,7 @@ function buildCharts(sample) {
     // 4. Create the trace for the gauge chart.
     var gaugeData = {
       title: { text: "Bellybutton Washing Frequency" },
-      value: parsefloat(washFrequency),
+      value: parseFloat(washFrequency),
       type: "indicator",
       mode: "gauge+number",
       gauge: {

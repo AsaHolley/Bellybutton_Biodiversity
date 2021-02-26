@@ -4,7 +4,7 @@
   text-align: center;
   text-emphasis-color: rgb(7, 232, 232);
 }
-body {
+.body {
   font: "Times";
-  color: #171616;
+  color: #000000;
 }
