@@ -2,7 +2,7 @@
   background-image: url("images/bacteria.jpeg");
   background-size: 100% 100%;
   text-align: center;
-  text-emphasis-color: rgb(7, 232, 232);
+  color: rgb(7, 232, 232);
 }
 .body {
   font: "Times";
